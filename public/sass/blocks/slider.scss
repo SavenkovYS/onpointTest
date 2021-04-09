@@ -1,0 +1,19 @@
+.slider {
+    position: relative;
+
+    &__button {
+        position: absolute;
+    }
+
+    &__button--up {
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__button--down {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+}

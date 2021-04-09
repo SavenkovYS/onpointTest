@@ -1,0 +1,30 @@
+.intro {
+    display: flex;
+    flex-direction: column;
+    
+    background-image: url('/public/img/intro.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__button {
+        position: absolute;
+        width: 100%;
+        z-index: 100;
+    }
+
+    &__button--up {
+        top: 0vh;
+        left: 0;
+    }
+
+    &__button--down {
+        bottom: 0vh;
+        left: 0;
+    }
+
+    &__slider {
+        position: absolute;
+        bottom: calc(0vh + 60px);
+    }
+}

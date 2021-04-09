@@ -1,0 +1,11 @@
+.container {    
+    overflow: hidden;
+    height: 100vh;
+}
+
+.inner-container {
+    width: 300vw;
+    display: flex;
+    flex-direction: row-reverse;
+    transform: translateX(calc(-100% / 3));
+}
