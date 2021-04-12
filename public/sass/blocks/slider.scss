@@ -1,33 +1,4 @@
 .slider {
 
-    &__pagination-container {
-        display: flex;
-        flex-direction: column;
-
-        position: absolute;
-        top: 50vh;
-        right: 30px;
-        transform: translateY(-50%);
-        z-index: 100;
-    }
-
-    &__pagination {
-        padding: 0;
-
-        width: 15px;
-        height: 15px;
-
-        border: none;
-        background-color: #fff;
-        border-radius: 50%;
-        z-index: 100;
-    }
-
-    &__pagination--active {
-        background-color: #f78b1f;
-    }
-
-    &__pagination:not(:last-child) {
-        margin-bottom: 10px;
-    }
+    transition: transform 1s ease-in-out;
 }
