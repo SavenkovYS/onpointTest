@@ -1,6 +1,21 @@
 .intro-dive {
-    background-image: url('/public/img/intro-bg-2.png');
-    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: 
+        url('../img/dive-bg-ice.png'),
+        url('/public/img/intro-bg-2.png');
+    background-size: contain, cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    &__title {
+        width: 800px;
+        margin: 0;
+        color: #fff;
+        font-size: 80px;
+        font-weight: 300;
+        text-align: center;
+    }
 }

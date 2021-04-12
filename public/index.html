@@ -9,6 +9,9 @@
 <body>
     <main class="page-main">
         <h1 class="visually-hidden">Современное понимание терапии сахарного диабета второго типа</h1>
+        
+        <!-- Меню -->
+
         <div class="menu">
             <button class="menu__button menu__button--open" aria-label="открыть меню"></button>
             <ul class="menu__list">
@@ -29,41 +32,61 @@
                 <p class="menu__timer-value">10:00</p>
             </div>
         </div>
-        <div class="page-main__container slider">
-            <button class="slider__button slider__button--up">Листать вверх</button>
-            <button class="slider__button slider__button--down">Листать вниз</button>
-            <div class="slider__pagination-container">
-                <button class="slider__pagination slider__pagination--active" aria-label="первый слайд"></button>
-                <button class="slider__pagination" aria-label="второй слайд"></button>
-                <button class="slider__pagination" aria-label="третий слайд"></button>
-            </div>
+        <div class="page-main__pagination-container">
+            <button class="page-main__pagination page-main__pagination--active" aria-label="первый слайд"></button>
+            <button class="page-main__pagination" aria-label="второй слайд"></button>
+            <button class="page-main__pagination" aria-label="третий слайд"></button>
+        </div>
+        <div class="slider">
             <section class="intro section vertical-slide">
-                <h2 class="intro__title">Всегда ли цели терапии СД2 на поверхности?</h2>
-                <ul class="intro__list">
-                    <li class="intro__item">Цели по HbA1c</li>
-                    <li class="intro__item">Гипогликемия</li>
-                    <li class="intro__item">Осложнения СД</li>
-                    <li class="intro__item">СС риски</li>
-                </ul>
+                <div class="intro__container">
+                    <h2 class="intro__title">Всегда ли цели терапии СД2 на поверхности?</h2>
+                    <ul class="intro__list">
+                        <li class="intro__item intro__item--aim">
+                            <div class="intro__signal"></div>
+                            Цели по HbA1c
+                        </li>
+                        <li class="intro__item intro__item--hypo">
+                            <div class="intro__signal"></div>
+                            Гипогликемия
+                        </li>
+                        <li class="intro__item intro__item--complication">
+                            <div class="intro__signal"></div>
+                            Осложнения СД
+                        </li>
+                        <li class="intro__item intro__item--risks">
+                            <div class="intro__signal"></div>
+                            СС риски
+                        </li>
+                    </ul>
+                </div>
             </section>
             <section class="intro-dive section vertical-slide">
                 <h2 class="intro-dive__title">Основа терапии — патогенез СД2</h2>
             </section>
-            <div class="vertical-slide">
-                <input class="intro__slider" type="range" min="1" max="100" value="100">
-                <div class="inner-container">
-                    <section class="pathogenesis section horizontal-slide">
-                        <h2 class="pathogenesis__title">Звенья патогенеза СД2</h2>
-                        <img>
+            <div class="slider__horizonatal-slider horizontal-slider vertical-slide">
+                <input class="horizontal-slider__range" type="range" min="1" max="100" value="100">
+                <div class="horizontal-slider__container">
+                    <section class="links section horizontal-slide">
+                        <h2 class="links__title">Звенья патогенеза СД2</h2>
+                        <div class="links__container">
+                            <img class="links__img" src="public/img/scheme-links.png" width="600px" alt="Схема звеньев патогенеза сахарного диабета второго типа">
+                        </div>
                     </section>
                     <section class="impact section horizontal-slide">
-
+                        <h2 class="impact__title">Смертельный октет</h2>
+                        <div class="impact__container">
+                            <img class="impact__img" src="public/img/impact-scheme.png" width="700px" alt="Схема влияния на организм сахарного диабета второго типа">
+                        </div>
                     </section>
-                    <section class="links section horizontal-slide">
-                        
+                    <section class="pathogenesis section horizontal-slide">
+                        <h2 class="pathogenesis__title">Звенья патогенеза СД2</h2>
+                        <div class="pathogenesis__container">
+                            <img class="pathogenesis__img" src="public/img/pathogenesis-scheme.png" width="850px" alt="Схема звеньев патогенеза сахарного диабета второго типа">
+                        </div>
                     </section>
-                </div>
-            </div>    
+                </div>   <!-- / horizonatal-slider__container -->
+            </div>   <!-- / horizonatal-slider -->
         </div>   <!-- / slider -->
     </main>
 </body>

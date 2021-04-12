@@ -1,6 +1,22 @@
 .pathogenesis {
-    background-image: url('/public/img/slide-3.png');
-    background-size: cover;
+    padding: 60px 60px 0;
+
+    background-image: 
+        url('../img/pathogenesis-bg-ice.png'),
+        url('../img/bg.png');
+    background-size: contain, cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    &__title {
+        margin-bottom: 70px;
+        font-size: 40px;
+        color: #fff;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }

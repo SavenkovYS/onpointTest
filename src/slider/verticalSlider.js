@@ -1,24 +1,29 @@
 (function() {
-
     function slideDown() {
-        const scrollDownBtn = document.querySelector('.intro__button--down')
-        const scrollUpBtn = document.querySelector('.intro__button--up')
         const verticalSlides = document.querySelectorAll('.vertical-slide')
+        const slider = document.querySelector('.slider')
         let currentSlide = 0
         let transformValue = 0;
-        
-        scrollDownBtn.addEventListener('click', () => {
-            transformValue -= 100
-            verticalSlides.forEach(slide => {
-                slide.style.transform = `translateY(${transformValue}%)`
-            })
-        })
 
-        scrollUpBtn.addEventListener('click', () => {
-            transformValue += 100
-            verticalSlides.forEach(slide => {
-                slide.style.transform = `translateY(${transformValue}%)`
-            })
+        slider.addEventListener('touchstart', evt => {
+            const initCoord = evt.targetTouches[0].clientY
+
+            slider.addEventListener('touchend', handleTouchend)
+
+            function handleTouchend (evt) {
+                const finalCoord = evt.changedTouches[0].clientY
+
+                if (finalCoord - 50 < initCoord && currentSlide !== verticalSlides.length - 1) {
+                    currentSlide++
+                    slider.style.transform = `translateY(${-100 / verticalSlides.length * currentSlide}%)`
+                }
+
+                if (finalCoord > initCoord + 50 && currentSlide !== 0) {
+                    currentSlide--
+                    slider.style.transform = `translateY(${-100 / verticalSlides.length * currentSlide}%)`
+                }
+                slider.removeEventListener('touchend', handleTouchend)
+            }
         })
     }
     

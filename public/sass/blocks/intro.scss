@@ -1,30 +1,146 @@
 .intro {
     display: flex;
     flex-direction: column;
-    
-    background-image: url('/public/img/intro.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
-    &__button {
-        position: absolute;
+    background-image: linear-gradient(#56A8FC, #1D5ECB);
+
+    &__container {
+        position: relative;
         width: 100%;
-        z-index: 100;
+        height: 100%;
+        margin: 0 auto;
+        padding: 50px 145px;
+
+        background-image: url('/public/img/intro.png');
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 10px 0px #000;
     }
 
-    &__button--up {
-        top: 0vh;
-        left: 0;
+    &__title {
+        margin: 0;
+
+        color: #0d319c;
+        font-size: 70px;
+        font-weight: 400;
     }
 
-    &__button--down {
-        bottom: 0vh;
-        left: 0;
+    &__list {
+        margin: 0;
+        padding: 0;
+
+        list-style: none;
     }
 
-    &__slider {
+    &__item {
         position: absolute;
-        bottom: calc(0vh + 60px);
+        top: 0;
+        left: 0;
+
+        color: #0d319c;
+        font-size: 25px;
+    }
+
+    &__signal {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 60px;
+        height: 60px;
+
+        background-image: radial-gradient(at center, rgba(#de791b, 0.2), rgba(#cf1437, 0.2));
+        border-radius: 50%;
+        border: 4px solid #de791b;
+    }
+
+    &__signal::before,
+    &__signal::after {
+        content: '';
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 15px;
+        height: 15px;
+        margin-top: calc(-15px / 2);
+        margin-left: calc(-15px / 2);
+
+        animation-name: signal;
+        animation-iteration-count: infinite;
+        animation-duration: 1.2s;
+        animation-timing-function: linear;
+
+        background-image: radial-gradient(at center, rgba(#de791b, 0.5), rgba(#cf1437, 0.5));
+        border-radius: 50%;
+    }
+
+    &__signal::after {  
+        animation-delay: 0.6s;
+    }
+
+    &__item--aim {
+        top: calc(50% - 110px);
+        left: calc(50% + 130px);
+    }
+
+    &__item--aim &__signal {
+        top: -18px;
+        left: -85px;
+    }
+
+    &__item--hypo {
+        top: calc(50% - 8px);
+        left: calc(50% - 323px);
+    }
+
+    &__item--hypo &__signal {
+        top: 35px;
+        left: 67px;
+    }
+
+    &__item--complication {
+        top: calc(50% + 92px);
+        left: calc(50% - 173px);
+    }
+
+    &__item--complication &__signal {
+        top: 40px;
+        left: 115px;
+    }
+
+    &__item--risks {
+        top: calc(50% + 65px);
+        left: calc(50% + 257px);
+    }
+
+    &__item--risks &__signal {
+        top: 45px;
+        left: 28px;
+    }
+}
+
+@keyframes signal {
+    25% {
+        transform: scale(1.5);
+
+        background-image: radial-gradient(at center, rgba(#de791b, 0.22), rgba(#cf1437, 0.22));
+        border: 1px solid #de791b;
+    }
+
+    50% {
+        transform: scale(2);
+
+        background-image: radial-gradient(at center, rgba(#de791b, 0.22), rgba(#cf1437, 0.22));
+        border: 1px solid #de791b;
+    }
+
+    100% {
+        transform: scale(4);
+
+        background-image: radial-gradient(at center, rgba(#de791b, 0.22), rgba(#cf1437, 0.22));
+        border: 1px solid #de791b;
     }
 }
