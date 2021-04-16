@@ -1,5 +1,0 @@
-export {default as Pathogenesis} from './Pathogenesis'
-export {default as Impact} from './Impact'
-export {default as Intro} from './Intro'
-export {default as IntroDive} from './IntroDive'
-export {default as Links} from './Links'

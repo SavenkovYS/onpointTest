@@ -1,19 +1,20 @@
-.pathogenesis {
+.impact {
     padding: 30px 60px 0;
-
+    
     background-image: 
-        url('../img/pathogenesis-bg-ice.png'),
+        url('../img/impact-bg-ice.png'),
         url('../img/bg.png');
     background-size: contain, cover;
-    background-position: bottom, center;
+    background-position: center;
     background-repeat: no-repeat;
 
     &__title {
         margin: 0;
         margin-bottom: 70px;
-
+        
         font-size: 40px;
         color: #fff;
+        font-weight: 400;
     }
 
     &__container {

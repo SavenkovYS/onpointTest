@@ -133,6 +133,7 @@
 
         background-color: #fff;
         border-radius: 15px;
+        width: 65px;
         min-width: max-content;
     }
 
@@ -140,7 +141,7 @@
         margin: 0;
         margin-right: auto;
 
-        font-size: 16px;
+        font-size: 14px;
     }
 
     &__timer::before {

@@ -77,7 +77,7 @@ const jsLoaders = () => {
 const plugins = () => {
   const base = [
     new HTMLWebpackPlugin({
-      template: './public/index.html',
+      template: './src/index.html',
       minify: {
         collapseWhitespace: isProd
       }
@@ -85,8 +85,8 @@ const plugins = () => {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: path.resolve(__dirname, 'public'),
-        to: path.resolve(__dirname, 'dist/public')
+        from: path.resolve(__dirname, 'src/img'),
+        to: path.resolve(__dirname, 'dist/img')
       }
     ]),
     new MiniCssExtractPlugin({

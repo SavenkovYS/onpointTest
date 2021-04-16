@@ -1,4 +1,4 @@
-import '../public/sass/style.scss'
-import './slider/verticalSlider'
-import './slider/horizontalSlider'
-import './slider/timer'
+import './sass/style.scss'
+import './js/verticalSlider'
+import './js/horizontalSlider'
+import './js/timer'
