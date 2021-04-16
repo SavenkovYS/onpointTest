@@ -1,15 +1,17 @@
 .pathogenesis {
-    padding: 60px 60px 0;
+    padding: 30px 60px 0;
 
     background-image: 
         url('../img/pathogenesis-bg-ice.png'),
         url('../img/bg.png');
     background-size: contain, cover;
-    background-position: center;
+    background-position: bottom, center;
     background-repeat: no-repeat;
 
     &__title {
+        margin: 0;
         margin-bottom: 70px;
+
         font-size: 40px;
         color: #fff;
     }

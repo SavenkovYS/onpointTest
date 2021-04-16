@@ -13,30 +13,34 @@
         <!-- Меню -->
 
         <div class="menu">
-            <button class="menu__button menu__button--open" aria-label="открыть меню"></button>
+            <button class="menu__button menu__button--toggle" aria-label="открыть/закрыть меню"></button>
             <ul class="menu__list">
-                <li class="menu__item menu__item--">
-                    <button class="menu__button" aria-label=""></button>
+                <li class="menu__item">
+                    <button class="menu__button menu__button--no-video" aria-label="закончить запись"></button>
                 </li>
-                <li class="menu__item menu__item--">
-                    <button class="menu__button" aria-label=""></button>
+                <li class="menu__item">
+                    <button class="menu__button menu__button--cancel" aria-label="отменить"></button>
                 </li>
-                <li class="menu__item menu__item--">
-                    <button class="menu__button" aria-label=""></button>
+                <li class="menu__item">
+                    <button class="menu__button menu__button--confirm" aria-label="подтвердить"></button>
                 </li>
-                <li class="menu__item menu__item--">
-                    <button class="menu__button" aria-label=""></button>
+                <li class="menu__item">
+                    <button class=" menu__button menu__button--pause" aria-label="поставить на паузу"></button>
                 </li>
             </ul>
             <div class="menu__timer">
                 <p class="menu__timer-value">10:00</p>
             </div>
-        </div>
+        </div> <!-- /menu -->
+
+        <!-- Пагинация -->
+
         <div class="page-main__pagination-container">
             <button class="page-main__pagination page-main__pagination--active" aria-label="первый слайд"></button>
             <button class="page-main__pagination" aria-label="второй слайд"></button>
             <button class="page-main__pagination" aria-label="третий слайд"></button>
-        </div>
+        </div> <!-- /page-main__pagination-container -->
+
         <div class="slider">
             <section class="intro section vertical-slide">
                 <div class="intro__container">
@@ -60,12 +64,30 @@
                         </li>
                     </ul>
                 </div>
+                <div class="intro__scroll">
+                    <p class="intro__scroll-text">Листайте вниз</p>
+                </div>
             </section>
             <section class="intro-dive section vertical-slide">
                 <h2 class="intro-dive__title">Основа терапии — патогенез СД2</h2>
             </section>
-            <div class="slider__horizonatal-slider horizontal-slider vertical-slide">
-                <input class="horizontal-slider__range" type="range" min="1" max="100" value="100">
+            
+            <div class="slider__horizontal-slider horizontal-slider vertical-slide">
+                <div class="horizontal-slider__range">
+                    <div class="horizontal-slider__range-line"></div>
+                    <div class="horizontal-slider__range-pin"></div>
+                    <ul class="horizontal-slider__range-list">
+                        <li class="horizontal-slider__range-item">
+                            <p class="horizontal-slider__range-caption">1998</p>
+                        </li>
+                        <li class="horizontal-slider__range-item">
+                            <p class="horizontal-slider__range-caption">2009</p>
+                        </li>
+                        <li class="horizontal-slider__range-item">
+                            <p class="horizontal-slider__range-caption">2016</p>
+                        </li>
+                    </ul>
+                </div>
                 <div class="horizontal-slider__container">
                     <section class="links section horizontal-slide">
                         <h2 class="links__title">Звенья патогенеза СД2</h2>

@@ -25,15 +25,19 @@
     }
 
     &__button {
+        position: relative;
         width: 50px;
         height: 50px;
 
         border-radius: 50%;
         border: none;
         cursor: pointer;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
 
-    &__button--open {
+    &__button--toggle {
         grid-area: menu-open;
 
         width: 35px;
@@ -42,29 +46,114 @@
         align-self: center;
     }
 
+    &__button--toggle::before {
+        content: '...';
+
+        position: absolute;
+        top: -2px;
+        left: 10px;
+
+        font-size: 20px;
+    }
+
+    &__button--no-video {
+        background-image: url('../img/icon-no-video.svg');
+        background-size: 30px;
+    }
+
+    &__button--cancel::before,
+    &__button--cancel::after {
+        content: '';
+        position: absolute;
+        left: 10px;
+        top: 24px;
+        
+        width: 30px;
+        height: 2px;
+
+        background-color: #000;
+    }
+
+    &__button--cancel::before {
+        transform: rotate(45deg);
+    }
+
+    &__button--cancel::after {
+        transform: rotate(-45deg);
+    }
+
+    &__button--confirm::before {
+        content: '';
+
+        position: absolute;
+        top: 15px;
+        left: 13px;
+
+        width: 28px;
+        height: 13px;
+
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+        border-right: 2px solid transparent;
+        border-top: 2px solid transparent;
+        transform: rotate(-45deg);
+        border-radius: 3px 0 3px 0;
+    }
+
+    &__button--pause::before,
+    &__button--pause::after {
+        content: '';
+
+        position: absolute;
+        top: 15px;
+        left: 20px;
+
+        width: 2px;
+        height: 20px;
+
+        background-color: #000;
+    }
+
+    &__button--pause::after {
+        left: 28px;
+    }
+
+    &__button:active {
+        opacity: 0.4;
+    }
+
     &__timer {
+        position: relative;
         grid-area: timer;
         align-self: center;
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 2px 5px 2px 20px;
 
-        background-color: grey;
-        border-radius: 40%;
-        min-width: 70px;
+        background-color: #fff;
+        border-radius: 15px;
+        min-width: max-content;
     }
 
     &__timer-value {
         margin: 0;
+        margin-right: auto;
+
+        font-size: 16px;
     }
 
     &__timer::before {
         content: '';
-        display: block;
+        position: absolute;
+        left: 3px;
 
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
 
-        background-color: red;
+        background-image: url('../img/icon-timer.svg');
+        background-size: 12px;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

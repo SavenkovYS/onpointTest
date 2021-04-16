@@ -1,51 +1,53 @@
 (function() {
-    function slideDown() {
-        const verticalSlides = document.querySelectorAll('.vertical-slide')
-        const paginationBtns = document.querySelectorAll('.page-main__pagination')
-        console.log(paginationBtns)
-        const slider = document.querySelector('.slider')
-        let currentSlide = 0
-        let transformValue = 0;
+    
+    const slides = document.querySelectorAll('.vertical-slide')
+    const paginationBtns = document.querySelectorAll('.page-main__pagination')
+    const slider = document.querySelector('.slider')
+    const scrollDown = document.querySelector('.intro__scroll')
 
-        slider.addEventListener('touchstart', evt => {
-            const initCoord = evt.targetTouches[0].clientY
+    const TOUCH_DISTANCE = 50
 
-            slider.addEventListener('touchend', handleTouchend)
+    let currentSlide = 0
 
-            function handleTouchend (evt) {
-                const finalCoord = evt.changedTouches[0].clientY
+    slider.addEventListener('touchstart', evt => {
+        const initCoord = evt.targetTouches[0].clientY
 
-                if (finalCoord - 50 < initCoord && currentSlide !== verticalSlides.length - 1) {
-                    currentSlide++
-                    slider.style.transform = `translateY(${-100 / verticalSlides.length * currentSlide}%)`
-                    paginationBtns.forEach((btn, i) => {
-                        btn.classList.remove('page-main__pagination--active')
-                        if (i === currentSlide) {
-                            btn.classList.add('page-main__pagination--active')
-                        }
-                    })
-                }
+        slider.addEventListener('touchend', handleTouchend)
 
-                if (finalCoord > initCoord + 50 && currentSlide !== 0) {
-                    currentSlide--
-                    slider.style.transform = `translateY(${-100 / verticalSlides.length * currentSlide}%)`
-                    paginationBtns.forEach((btn, i) => {
-                        btn.classList.remove('page-main__pagination--active')
-                        if (i === currentSlide) {
-                            btn.classList.add('page-main__pagination--active')
-                            return
-                        }
-                    })
-                }
-                slider.removeEventListener('touchend', handleTouchend)
+        function handleTouchend (evt) {
+            const finalCoord = evt.changedTouches[0].clientY
+
+            if (initCoord - finalCoord > TOUCH_DISTANCE && currentSlide !== slides.length - 1) {
+                currentSlide++
+                showSlide(currentSlide)
             }
-        })
 
+            if (finalCoord - initCoord > TOUCH_DISTANCE && currentSlide !== 0) {
+                currentSlide--
+                showSlide(currentSlide)
+            } 
 
-    }
+            function showSlide(slideNumber) {
+                slider.style.transform = `translateY(${-100 / slides.length * slideNumber}%)`
+                paginationBtns.forEach((btn, i) => {
+                    btn.classList.remove('page-main__pagination--active')
+                    if (i === slideNumber) {
+                        btn.classList.add('page-main__pagination--active')
+                        return
+                    }
+                })
+            }
+
+            if (currentSlide !== 0) {
+                scrollDown.style.display = 'none'
+            } else {
+                scrollDown.style.display = 'block'
+            }
+            
+            slider.removeEventListener('touchend', handleTouchend)
+        }
+    })
     
 
-    (function init() {
-        slideDown()
-    })()
+   
 })()
